@@ -29,3 +29,18 @@ module.exports = function towelSort (matrix = []) {
  }
 }
  
+// ONE MORE decision :
+module.exports = function towelSort(arr) {
+    if (arr === undefined || arr.length === 0) {
+        return [];
+    }
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 !== 0) {
+            result.push(arr[i].reverse());
+        } else {
+            result.push(arr[i]);
+        }
+    }
+    return result.flat();
+};
